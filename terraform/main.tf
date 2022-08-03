@@ -1,4 +1,3 @@
-
 #terraform {
 #  backend "azurerm" {
 #    resource_group_name  = "tamopstfstates"
@@ -12,17 +11,13 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0.2"
+      version = "=3.0.2"
     }
   }
-
-  required_version = ">= 1.1.0"
 }
-
 provider "azurerm" {
-  features {}
-}
- 
+    features {}
+} 
 
 #data "azurerm_client_config" "current" {}
 

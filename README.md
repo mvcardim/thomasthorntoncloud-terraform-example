@@ -1,4 +1,4 @@
-## Deploy Terraform using GitHub Actions to Azure
+## Deploy Terraform using GitHub Actions to Azure Teste
 
 Using Terraform to deploy your Azure resources is becoming more and more popular; in some instances overtaking the use of ARM to deploy into Azure. I will show you in this blog how you can deploy your Azure Resources created in Terraform using GitHub Actions.
 

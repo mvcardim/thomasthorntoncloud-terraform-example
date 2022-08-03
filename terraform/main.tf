@@ -24,7 +24,7 @@ provider "azurerm" {
 }
  
 
-data "azurerm_client_config" "current" {}
+#data "azurerm_client_config" "current" {}
 
 #Criaçao do Resource Group
 resource "azurerm_resource_group" "tamops" {

@@ -1,12 +1,3 @@
-#terraform {
-#  backend "azurerm" {
-#    resource_group_name  = "tamopstfstates"
-#    storage_account_name = "tfstatedevops"
-#    container_name       = "terraformgithubexample"
-#    key                  = "terraformgithubexample.tfstate"
-# }
-#}
-
 terraform {
   required_providers {
     azurerm = {
@@ -18,8 +9,6 @@ terraform {
 provider "azurerm" {
   features {}
 } 
-
-#data "azurerm_client_config" "current" {}
 
 #Criaçao do Resource Group
 resource "azurerm_resource_group" "tamops" {

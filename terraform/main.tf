@@ -16,7 +16,7 @@ terraform {
   }
 }
 provider "azurerm" {
-    features {}
+  features {}
 } 
 
 #data "azurerm_client_config" "current" {}

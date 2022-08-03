@@ -1,3 +1,4 @@
+
 #terraform {
 #  backend "azurerm" {
 #    resource_group_name  = "tamopstfstates"
@@ -40,10 +41,9 @@ resource "azurerm_virtual_network" "vnet" {
 }
 
 # Criaçao da Subnet
-resource "azurerm_subnet" "subnet" {
-  name                 = "subnet"
-  resource_group_name  = azurerm_resource_group.tamops.name
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefix       = "192.168.0.0/24"
-}
-  
+#resource "azurerm_subnet" "subnet" {
+#  name                 = "subnet"
+#  resource_group_name  = azurerm_resource_group.tamops.name
+#  virtual_network_name = azurerm_virtual_network.vnet.name
+#  address_prefix       = "192.168.0.0/24"
+#}

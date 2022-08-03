@@ -2,32 +2,32 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "=v0.14.8"
+      version = "=3.0.2"
     }
   }
 }
 provider "azurerm" {
-  features {}
-} 
-
-#Criaçao do Resource Group
-resource "azurerm_resource_group" "tamops" {
-  name     = "tamops"
-  location = "eastus2"
+    features {}
 }
+resource "azurerm_resource_group" "rg" {
 
-#Criaçao de  Virtual Network
+    name = "rg-terraform-import"
+    location = "brazilsouth"
+    tags = {
+        "ambiente" = "treinamento"
+    }
+}
 resource "azurerm_virtual_network" "vnet" {
-  name                = "tamops-vnet"
-  address_space       = ["192.168.0.0/16"]
-  location            = "eastus2"
-  resource_group_name = azurerm_resource_group.tamops.name
+   name = "vnet-import"
+   resource_group_name = "rg-terraform-import"
+   location = "brazilsouth"
+   address_space = [ "10.0.0.0/16" , "192.168.0.0/16"]
+   tags = {
+     "ambiente" = "teste"
+   }
 }
-
-# Criaçao da Subnet
-#resource "azurerm_subnet" "subnet" {
-#  name                 = "subnet"
-#  resource_group_name  = azurerm_resource_group.tamops.name
-#  virtual_network_name = azurerm_virtual_network.vnet.name
-#  address_prefix       = "192.168.0.0/24"
-#}
+resource "azurerm_network_security_group" "nsg"{
+    name = "nsg-import"
+    location = "brazilsouth"
+    resource_group_name = "rg-terraform-import"
+}

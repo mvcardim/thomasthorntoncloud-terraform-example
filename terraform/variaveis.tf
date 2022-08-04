@@ -6,7 +6,7 @@ variable "location" {
 variable "namerg" {
   type        = string
   description = "Nome do Resource Group"
-  default     = "rg-variaveis"
+  default     = "exemplo"
 }
 variable "tags" {
   type = map(any)

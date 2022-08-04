@@ -9,9 +9,9 @@ variable "namerg" {
   default     = "exemplo"
 }
 variable "tags" {
-  type = map(any)
+  type          = map(any)
   description   = "Tags nos Recursos e Servicos do azure"
-  default = {
+  default       = {
     ambiente    = "desenvolvimento"
     responsavel = "Marco Vinicio"
   }

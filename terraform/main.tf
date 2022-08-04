@@ -12,14 +12,14 @@ provider "azurerm" {
 resource "azurerm_resource_group" "example" {
   name     = var.namerg
   location = var.location
-  tags     = merge(var.tag, { treinamento = "Terraform" })
+  tags = merge(var.tags, {treinamento = "terraform"}) 
 }
 
 resource "azurerm_network_security_group" "example" {
   name                = var.namerg
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  tags                = var.tag
+  tags = var.tags
 }
 
 resource "azurerm_virtual_network" "example" {
@@ -41,6 +41,6 @@ resource "azurerm_virtual_network" "example" {
   }
 
   tags = {
-    environment = var.tag
+    environment = "Desenvolvimento"
   }
 }

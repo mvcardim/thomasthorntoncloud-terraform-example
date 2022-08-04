@@ -6,10 +6,13 @@ variable "location" {
 variable "namerg" {
   type        = string
   description = "Nome do Resource Group"
-  default     = "exemplo resouse"
+  default     = "exemplo"
 }
-variable "tag" {
-    type = string
-    description = "nome da tag"
-    default = "Desenvolvimento"
+variable "tags" {
+  type = map
+  description = "Tags nos Recursos e Servicos do azure"
+  default = {
+      ambiente = "desenvolvimento"
+      responsavel = "Marco Vinicio"
+  }
 }

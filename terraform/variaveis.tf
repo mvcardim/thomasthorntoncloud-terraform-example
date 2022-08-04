@@ -1,18 +1,18 @@
 variable "location" {
-  type = string
+  type        = string
   description = "Localizacao dos Rercursos do Azure. Ex: brazilsouth"
-  default = "eastus"
+  default     = "eastus"
 }
 variable "namerg" {
-  type = string
+  type        = string
   description = "Nome do Resource Group"
-  default = "rg-variaveis"
+  default     = "rg-variaveis"
 }
 variable "tags" {
-  type = map
-  description = "Tags nos Recursos e Servicos do azure"
-  default = {
-      ambiente = "desenvolvimento"
-      responsavel = "Marco Vinicio"
+  type          = map
+  description   = "Tags nos Recursos e Servicos do azure"
+  default       = {
+    ambiente    = "desenvolvimento"
+    responsavel = "Marco Vinicio"
   }
 }

@@ -9,7 +9,7 @@ variable "namerg" {
   default     = "exemplo"
 }
 variable "tags" {
-  type          = string
-  description   = "Tags nos Recursos e Servicos do azure"
-  default       = "desenvolvimento"
+    type = string
+    description = "nome da tag"
+    default = "Desenvolvimento"
 }

@@ -13,5 +13,5 @@ variable "tags" {
   description   = "Tags nos Recursos e Servicos do azure"
   default       = "desenvolvimento"
   responsavel   = "Marco Vinicio"
-  }
+}
 

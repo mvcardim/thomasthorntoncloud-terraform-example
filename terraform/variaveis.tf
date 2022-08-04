@@ -11,8 +11,8 @@ variable "namerg" {
 variable "tags" {
   type          = string
   description   = "Tags nos Recursos e Servicos do azure"
-  default       = {
-      ambiente    = "desenvolvimento"
-      responsavel = "Marco Vinicio"
+  default  = {
+    ambiente    = "desenvolvimento"
+    responsavel = "Marco Vinicio"
   }
 }

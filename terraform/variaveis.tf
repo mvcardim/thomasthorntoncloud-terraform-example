@@ -8,7 +8,7 @@ variable "namerg" {
   description = "Nome do Resource Group"
   default     = "exemplo"
 }
-variable "tags" {
+variable "tag" {
     type = string
     description = "nome da tag"
     default = "Desenvolvimento"

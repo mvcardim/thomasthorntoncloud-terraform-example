@@ -6,7 +6,7 @@ variable "location" {
 variable "namerg" {
   type        = string
   description = "Nome do Resource Group"
-  default     = "exemplo"
+  default     = "exemplo resouse"
 }
 variable "tag" {
     type = string

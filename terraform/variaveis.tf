@@ -12,6 +12,4 @@ variable "tags" {
   type          = string
   description   = "Tags nos Recursos e Servicos do azure"
   default       = "desenvolvimento"
-  responsavel   = "Marco Vinicio"
 }
-

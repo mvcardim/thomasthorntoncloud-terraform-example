@@ -9,10 +9,10 @@ variable "namerg" {
   default     = "rg-variaveis"
 }
 variable "tags" {
-  type          = string
-  description   = "Tags nos Recursos e Servicos do azure"
-  default  = {
-    ambiente    = "desenvolvimento"
-    responsavel = "Marco Vinicio"
+  type = map
+  description = "Tags nos Recursos e Servicos do azure"
+  default = {
+      ambiente = "desenvolvimento"
+      responsavel = "Marco Vinicio"
   }
 }

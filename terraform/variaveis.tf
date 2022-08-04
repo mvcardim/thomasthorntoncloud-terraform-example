@@ -9,7 +9,7 @@ variable "namerg" {
   default     = "rg-variaveis"
 }
 variable "tags" {
-  type          = map(any)
+  type          = string
   description   = "Tags nos Recursos e Servicos do azure"
   default       = {
       ambiente    = "desenvolvimento"

@@ -8,11 +8,11 @@ variable "namerg" {
   description = "Nome do Resource Group"
   default     = "exemplo"
 }
-variable "tags" {
-  type          = map(any)
-  description   = "Tags nos Recursos e Servicos do azure"
-  default       = {
-    ambiente    = "desenvolvimento"
-    responsavel = "Marco Vinicio"
-  }
-}
+//variable "tags" {
+//  type          = map(any)
+//  description   = "Tags nos Recursos e Servicos do azure"
+//  default       = {
+//    ambiente    = "desenvolvimento"
+//    responsavel = "Marco Vinicio"
+//  }
+//}

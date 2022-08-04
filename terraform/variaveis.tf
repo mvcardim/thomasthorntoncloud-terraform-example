@@ -3,7 +3,7 @@ variable "location" {
   description = "Localizacao dos Rercursos do Azure. Ex: brazilsouth"
   default = "eastus"
 }
- variable "namerg" {
+variable "namerg" {
   type = string
   description = "Nome do Resource Group"
   default = "rg-variaveis"

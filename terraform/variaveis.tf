@@ -16,3 +16,26 @@ variable "tags" {
     responsavel = "Marco Vinicio"
   }
 }
+variable "vnet" {
+  type = any
+  default = {
+    "vNetName"      = "vnet-001"
+    "address_space" = ["172.16.0.0/16"]
+  }
+}
+variable "Subnets" {
+  type = any
+  default = {
+    "GatewaySubnet" = {
+      "name"       = "GatewaySubnet"
+      "prefix"     = ["172.16.0.0/26"]
+      "routeTable" = "rt-vnet-connectivity-gateway-001"
+    }
+    "FirewallSubnet" = {
+      "name"       = "AzureFirewallSubnet"
+      "prefix"     = ["172.16.0.64/26"]
+      "routeTable" = "rt-vnet-connectivity-firewall-001"
+    }
+  }
+}
+

@@ -8,6 +8,7 @@ on:
   
 jobs:
 - job: terraform
+   steps:
     name: 'Terraform'
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
@@ -63,6 +64,7 @@ jobs:
         tf_actions_subcommand: 'apply'
         tf_actions_working_dir: "./terraform"
 - job: build-and-deploy
+       steps:
        needs: terraform 
        name: Iniciando build e deploy
       runs-on: ubuntu-latest

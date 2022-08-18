@@ -64,8 +64,9 @@ jobs:
         tf_actions_subcommand: 'apply'
         tf_actions_working_dir: "./terraform"
 - job: build-and-deploy
-       steps:
+       
        needs: terraform 
+       steps:
        name: Iniciando build e deploy
       runs-on: ubuntu-latest
       environment: production

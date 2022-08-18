@@ -11,21 +11,49 @@ resource "azurerm_network_security_group" "example" {
   resource_group_name = azurerm_resource_group.example.name
   tags                = var.tags
 }
-
-resource "azurerm_virtual_network" "vnet" {
-  name                = var.vnet.vNetName
-  address_space       = var.vnet.address_space
+resource "azurerm_app_service_plan" "plan" {
+  name                = var.slot-nome
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-}
-resource "azurerm_subnet" "subnets" {
-  for_each             = var.Subnets
-  name                 = each.value["name"]
-  resource_group_name  = azurerm_resource_group.example.name
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = each.value["prefix"]
 
-  depends_on = [
-    azurerm_virtual_network.vnet
-  ]
+  sku {
+    tier = "Standard"
+    size = "S1"
+  }
 }
+
+
+resource "azurerm_app_service" "appservice" {
+  name                = var.slot-nome
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  app_service_plan_id = azurerm_app_service_plan.plan.id
+}
+
+
+resource "azurerm_app_service_slot" "slot" {
+  name                = var.slot-nome
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  app_service_name    = azurerm_app_service.appservice.name
+  app_service_plan_id = azurerm_app_service_plan.plan.id
+
+}
+
+#resource "azurerm_virtual_network" "vnet" {
+#  name                = var.vnet.vNetName
+#  address_space       = var.vnet.address_space
+#  location            = azurerm_resource_group.example.location
+#  resource_group_name = azurerm_resource_group.example.name
+#}
+#resource "azurerm_subnet" "subnets" {
+#  for_each             = var.Subnets
+# name                 = each.value["name"]
+#  resource_group_name  = azurerm_resource_group.example.name
+#  virtual_network_name = azurerm_virtual_network.vnet.name
+#  address_prefixes     = each.value["prefix"]
+#
+#  depends_on = [
+#    azurerm_virtual_network.vnet
+#  ]
+#}

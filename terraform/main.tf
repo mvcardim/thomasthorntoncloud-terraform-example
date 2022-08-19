@@ -12,7 +12,7 @@ resource "azurerm_network_security_group" "example" {
   tags                = var.tags
 }
 resource "azurerm_app_service_plan" "plan" {
-  name                = var.slot-nome
+  name                = var.app-nome
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 
@@ -24,7 +24,7 @@ resource "azurerm_app_service_plan" "plan" {
 
 
 resource "azurerm_app_service" "appservice" {
-  name                = var.slot-nome
+  name                = var.app-nome
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   app_service_plan_id = azurerm_app_service_plan.plan.id
@@ -32,7 +32,7 @@ resource "azurerm_app_service" "appservice" {
 
 
 resource "azurerm_app_service_slot" "slot" {
-  name                = var.slot-nome
+  name                = var.app-nome
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   app_service_name    = azurerm_app_service.appservice.name

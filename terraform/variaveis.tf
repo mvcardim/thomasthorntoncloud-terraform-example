@@ -19,7 +19,7 @@ variable "tags" {
 variable "app-nome" {
   type        = string
   description = "Nome da App"
-  default     = "Web-APP"
+  default     = "Web-APPexemplo"
 }
 #variable "vnet" {
 #  type = any

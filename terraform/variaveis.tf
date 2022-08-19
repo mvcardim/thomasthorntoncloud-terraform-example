@@ -16,8 +16,10 @@ variable "tags" {
     responsavel = "Marco Vinicio"
   }
 }
-variable "slot-nome" {
+variable "app-nome" {
   type = string
+  description = "Nome da App"
+  default = Web-APP"
 }
 #variable "vnet" {
 #  type = any
